@@ -132,6 +132,10 @@ a:hover {
     flex-basis: calc(33.333% - 12px);
     box-sizing: border-box;
     min-width: 300px;
+    min-height: 80px;
+}
+.friends-container img {
+    height: 60px;
 }
 
 .link:hover {
