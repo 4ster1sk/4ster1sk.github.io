@@ -5,9 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ㅤ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=b">
 </head>
 <body>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+    </script>
     <div class="main-container">
         <div class="profile-container">
             <div class="profile-info">
@@ -20,8 +25,9 @@
             <div class="link-section">
                 <h2>LINK</h2>
                 <div class="links">
-                    <a href="https://mi.tomadoi.com/@4sterisk" class="link sns-link"><img src="images/misskey.svg" alt="Misskey" class="misskey-icon"><span>misskey</span></a>
-                    <a href="https://github.com/4ster1sk" class="link sns-link"><i class="fab fa-github"></i><span>GitHub</span></a>
+                    <a href="https://mi.tomadoi.com/@4sterisk" class="link"><img src="images/misskey.svg" alt="Misskey" class="svg-icon misskey-icon"><span>Misskey</span></a>
+                    <a href="https://github.com/4ster1sk" class="link"><i class="fab fa-github svg-icon"></i><span>GitHub</span></a>
+                    <a href="https://www.pixiv.net/users/96023469" class="link"><i class="fab fa-pixiv svg-icon"></i><span>Pixiv</span></a>
                 </div>
             </div>
         </div>
@@ -38,8 +44,8 @@
             </div>
         </div>
         <div class="footer-container">
-            <div>&copy; 2025 ****(4sterisk).</div>
-            <div><img src="images/misskey.svg" alt="misskey" class="misskey-icon">ロゴはMisskey Hubにて配布されている<a href="https://misskey-hub.net/ja/brand-assets/">アセット集</a>に含まれるものであり<BR></VR>CC BY-NC-SAのライセンスに従って利用しています</div>
+            <span>&copy; 2025 ****(4sterisk).</span>
+            <span><img src="images/misskey.svg" alt="misskey" class="svg-icon misskey-icon">ロゴはMisskey Hubにて配布されている<a href="https://misskey-hub.net/ja/brand-assets/">アセット集</a>に含まれるものであり<BR></VR>CC BY-NC-SAのライセンスに従って利用しています</span>
         </div>
     </div>
 </body>

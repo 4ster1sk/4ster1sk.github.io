@@ -8,6 +8,21 @@ body {
     padding: 20px 0;
     background-color: #efecf1;
     color: #555;
+    opacity: 0;
+    transition: opacity 0.3s ease-in;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+a {
+    color: #713999;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 .main-container {
@@ -18,11 +33,18 @@ body {
     max-width: 800px;
 }
 
+
 .profile-container, .friends-container {
     padding: 30px;
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .footer-container {
@@ -31,27 +53,6 @@ body {
     align-items: center;
     text-align: center;
     gap: 0;
-}
-
-.footer-container a {
-    color: #713999;
-    text-decoration: none;
-}
-
-.footer-container a:hover {
-    text-decoration: underline;
-}
-
-.footer-container div {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 1;
-}
-
-.profile-container {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
 }
 
 .profile-info {
@@ -102,7 +103,7 @@ body {
     justify-content: flex-start;
 }
 
-.link {
+.profile-container .link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -115,6 +116,22 @@ body {
     transition: all 0.2s ease-in-out;
     flex-basis: calc(33.333% - 12px);
     box-sizing: border-box;
+}
+
+.friends-container .link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #555;
+    background-color: #fff;
+    transition: all 0.2s ease-in-out;
+    flex-basis: calc(33.333% - 12px);
+    box-sizing: border-box;
+    min-width: 300px;
 }
 
 .link:hover {
@@ -135,26 +152,26 @@ body {
     color: #fff;
 }
 
-.sns-link i {
+.link i {
     margin-right: 8px;
     color: #713999;
     transition: color 0.2s ease-in-out;
 }
 
-.link:hover .sns-link i {
-    color: #fff;
-}
-
-.misskey-icon {
-    height: 1.2em;
-    margin-right: 8px;
+.svg-icon {
     vertical-align: middle;
     filter: invert(30%) sepia(90%) saturate(2000%) hue-rotate(260deg) brightness(70%) contrast(100%);
     transition: filter 0.2s ease-in-out;
 }
 
-.link:hover .misskey-icon {
+.link:hover .svg-icon {
     filter: brightness(0) invert(1);
+}
+
+.misskey-icon {
+    height: 1.2em;
+    margin-right: 6px;
+    vertical-align: middle;
 }
 
 /* Responsive Design */
