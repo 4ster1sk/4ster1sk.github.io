@@ -67,10 +67,34 @@ a:hover {
     flex-direction: column;
 }
 
-.name {
+.profile-text .name {
     margin: 0;
     font-size: 1.8em;
     color: #111;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.profile-text .button {
+    background-color: #713999;
+    color: white;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.4em;
+    margin-left: 0px;
+    transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+    color: white;
+}
+
+.profile-text .button:hover {
+    outline: auto;
+    background-color: #ffffff;
+    color: #713999;
+    border-color: #ffffff;
 }
 
 .description {
@@ -98,9 +122,11 @@ a:hover {
 .links {
     display: flex;
     flex-direction: row;
-    gap: 12px;
     flex-wrap: wrap;
     justify-content: flex-start;
+    gap: 12px;
+    padding-left: 12px;
+    
 }
 
 .profile-container .link {
@@ -129,7 +155,7 @@ a:hover {
     color: #555;
     background-color: #fff;
     transition: all 0.2s ease-in-out;
-    flex-basis: calc(33.333% - 12px);
+    flex-basis: calc(50% - 12px);
     box-sizing: border-box;
     min-width: 300px;
     min-height: 80px;
@@ -178,8 +204,96 @@ a:hover {
     vertical-align: middle;
 }
 
+.dialog {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.dialog-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+    display: flex; /* Added for button positioning */
+    flex-direction: column; /* Added for button positioning */
+    align-items: center; /* Center items horizontally */
+}
+
+.dialog-content h2 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    width: 100%; /* Ensure heading takes full width */
+    text-align: left;
+}
+
+.dialog-content pre {
+    background-color: #eee;
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    white-space: pre-wrap; /* Ensures long lines wrap */
+    word-wrap: break-word; /* Breaks words if necessary */
+    max-height: 400px; /* Limit height for scroll */
+    font-size: 0.9em;
+    line-height: 1.4;
+    border: 1px solid #ddd;
+    width: 100%; /* Ensure pre takes full width */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.copy-button {
+    background-color: #713999;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.copy-button:hover {
+    background-color: #5a2c7a;
+}
+
 /* Responsive Design */
-@media (max-width: 767px) {
+@media (max-width: 800px) {
     .main-container {
         width: 95%;
         gap: 20px;
@@ -193,20 +307,11 @@ a:hover {
     .links {
         flex-direction: column;
         width: 100%;
+        padding-left: 0px;
     }
 
     .link {
         width: 100%;
         flex-basis: auto;
-    }
-}
-
-.friends-container .link {
-    flex-basis: calc(50% - 12px);
-}
-
-@media (max-width: 767px) {
-    .friends-container .link {
-        flex-basis: 100%;
     }
 }

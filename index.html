@@ -5,20 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ㅤ</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css?v=1751469324">
+    <link rel="stylesheet" href="style.css?v=1751534451">
 </head>
 <body>
-    <script>
-        window.addEventListener('DOMContentLoaded', () => {
-            document.body.classList.add('loaded');
-        });
-    </script>
     <div class="main-container">
         <div class="profile-container">
             <div class="profile-info">
-                <img src="./images/icon.webp" alt="アイコン" class="avatar">
+                <img src="./image/icon.webp" alt="アイコン" class="avatar">
                 <div class="profile-text">
-                    <h1 class="name">****</h1>
+                    <h1 class="name">****
+                        <a href="https://tomadoi.com/4sterisk-20240818.asc" class="button"><i class="fas fa-key"></i> PGP</a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLScwH0B35Gp3eCF2zcIfZ6A5nQlafAm80gsbk4dOVDQCIoZlcA/viewform" class="button"><i class="fas fa-envelope"></i> Contact</a>
+                    </h1>
                     <p class="description">ねこかもしれないし、ねこではないかもしれない</p>
                 </div>
             </div>
@@ -26,7 +24,7 @@
                 <h2>LINK</h2>
                 <div class="links">
                     <a href="https://github.com/4ster1sk" class="link"><i class="fab fa-github svg-icon"></i><span>GitHub</span></a>
-                    <a href="https://mi.tomadoi.com/@4sterisk" class="link"><img src="images/misskey.svg" alt="Misskey" class="svg-icon misskey-icon"><span>Misskey</span></a>
+                    <a href="https://mi.tomadoi.com/@4sterisk" class="link"><img src="image/misskey.svg" alt="Misskey" class="svg-icon misskey-icon"><span>Misskey</span></a>
                     <a href="https://bsky.app/profile/4sterisk.bsky.social" class="link"><i class="fab fa-bluesky svg-icon"></i><span>Bluesky</span></a>
                     <a href="https://www.pixiv.net/users/96023469" class="link"><i class="fab fa-pixiv svg-icon"></i><span>Pixiv</span></a>
                     <a href="https://youtube.com/@4st3r1sk" class="link"><i class="fab fa-youtube svg-icon"></i><span>Youtube</span></a>
@@ -37,18 +35,43 @@
             <div class="link-section">
                 <h2>Friends</h2>
                 <div class="links">
-                    <a href="https://caligula-sea.net/" class="link"><img src="images/caligula-sea.net.png"/></a>
-                    <a href="https://natumi.tkngh.jp/" class="link"><img src="images/natumi.tkngh.jp.png"/></a>
+                    <a href="https://caligula-sea.net/" class="link"><img src="image/caligula-sea.net.png"/></a>
+                    <a href="https://natumi.tkngh.jp/" class="link"><img src="image/natumi.tkngh.jp.png"/></a>
                     <a href="https://www.kur0den.net/" class="link"><span>kur0den.net</span></a>
                     <a href="https://ruru.my/" class="link"><span>お菓子食べませんか？</span></a>
-                    <a href="https://eap.vg/" class="link"><img src="images/eap.vg.gif"/></a>
-                </div>
+                    <a href="https://eap.vg/" class="link"><img src="image/eap.vg.gif"/></a>
+            </div>
             </div>
         </div>
         <div class="footer-container">
-            <span>&copy; 2025 ****(4sterisk).</span>
-            <span><img src="images/misskey.svg" alt="misskey" class="svg-icon misskey-icon">ロゴはMisskey Hubにて配布されている<a href="https://misskey-hub.net/ja/brand-assets/">アセット集</a>に含まれるものであり<BR></VR>CC BY-SA 4.0のライセンスに従って利用しています</span>
+            <span>&copy; 2025 ****(4sterisk)</span>
+            <span><img src="image/misskey.svg" alt="misskey" class="svg-icon misskey-icon">ロゴはMisskey Hubにて配布されている<a href="https://misskey-hub.net/ja/brand-assets/">アセット集</a>に含まれるものであり<BR></VR>CC BY-SA 4.0のライセンスに従って利用しています</span>
         </div>
     </div>
+    <div id="dialog" class="dialog">
+        <div class="dialog-content">
+            <span class="close-button">&times;</span>
+            <h2></h2>
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('loaded');
+        });
+        document.getElementById('dialog-button').addEventListener('click', function() {
+            document.getElementById('dialog').style.display = 'flex'; // flexに変更
+        });
+
+        document.querySelector('.close-button').addEventListener('click', function() {
+            document.getElementById('dialog').style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('dialog')) {
+                document.getElementById('dialog').style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
