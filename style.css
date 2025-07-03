@@ -87,7 +87,7 @@ a:hover {
     cursor: pointer;
     font-size: 0.4em;
     margin-left: 0px;
-    transition: color 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
     text-decoration: none;
     color: white;
 }
@@ -97,6 +97,8 @@ a:hover {
     background-color: #ffffff;
     color: #713999;
     border-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+
 }
 
 .description {
