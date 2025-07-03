@@ -94,11 +94,10 @@ a:hover {
 
 .profile-text .button:hover,.button:focus {
     outline: 2px solid;
-    background-color: #ffffff;
-    color: #713999;
     border-color: #ffffff;
+    background-color: #ffffff;
     transition: all 0.2s ease-in-out;
-
+    color: #713999;
 }
 
 .description {
