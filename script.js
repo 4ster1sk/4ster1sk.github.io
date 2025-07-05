@@ -1,4 +1,3 @@
-
 window.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('loaded');
 
@@ -39,3 +38,19 @@ document.addEventListener('keydown', (event) => {
         localStorage.setItem('theme', theme);
     }
 });
+
+function openDialog(event, id) {
+    event.preventDefault();
+    console.log(id);
+    const target = document.getElementById(id);
+    if (target) {
+        target.style.display = 'flex';
+    }
+}
+
+function closeDialog(button) {
+    const dialog = button.closest('.dialog');
+    if (dialog) {
+        dialog.style.display = 'none';
+    }
+}

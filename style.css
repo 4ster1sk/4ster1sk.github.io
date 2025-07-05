@@ -129,7 +129,7 @@ input:checked + .slider:before {
     gap: 8px;
 }
 
-.profile-text .button {
+.fill-button {
     background-color: #713999;
     color: white;
     padding: 2px 4px;
@@ -144,7 +144,8 @@ input:checked + .slider:before {
     outline-color: #ffffff;
 }
 
-.profile-text .button:hover,.button:focus {
+.fill-button:hover,
+.fill-button:focus {
     outline: 2px solid;
     background-color: #ffffff;
     transition: all 0.2s ease-in-out;
@@ -183,7 +184,7 @@ input:checked + .slider:before {
     
 }
 
-.profile-container .link {
+.link {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -199,16 +200,6 @@ input:checked + .slider:before {
 }
 
 .friends-container .link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-decoration: none;
-    color: #555;
-    background-color: #fff;
-    transition: all 0.2s ease-in-out;
     flex-basis: calc(50% - 12px);
     box-sizing: border-box;
     min-height: 80px;
@@ -365,7 +356,8 @@ input:checked + .slider:before {
         padding-left: 0px;
     }
 
-    .link {
+    .profile-container .link,
+    .friends-container .link {
         width: 100%;
         flex-basis: auto;
     }

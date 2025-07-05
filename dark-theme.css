@@ -31,8 +31,8 @@ body.dark-theme {
     border-bottom-color: #333;
 }
 
-.dark-theme .profile-container .link,
-.dark-theme .friends-container .link {
+.dark-theme .link,
+.dark-theme .link {
     border-color: #444;
     color: #e0e0e0;
     background-color: #2c2c2c;
@@ -107,14 +107,14 @@ body.dark-theme {
     background-color: #713999;
 }
 
-.dark-theme .profile-text .button {
+.dark-theme .fill-button {
     background-color: #713999;
     color: #fff;
     outline-color: #713999;
 }
 
-.dark-theme .profile-text .button:hover,
-.dark-theme .profile-text .button:focus {
+.dark-theme .fill-button:hover,
+.dark-theme .fill-button:focus {
     outline: 2px solid;
     outline-color: #713999;
     background-color: #000;
