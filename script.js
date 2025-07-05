@@ -41,16 +41,41 @@ document.addEventListener('keydown', (event) => {
 
 function openDialog(event, id) {
     event.preventDefault();
-    console.log(id);
     const target = document.getElementById(id);
     if (target) {
         target.style.display = 'flex';
+        disableScroll();
+
     }
 }
 
-function closeDialog(button) {
+function closeDialog(event, button) {
+    event.preventDefault();
     const dialog = button.closest('.dialog');
     if (dialog) {
         dialog.style.display = 'none';
+        document.body.classList.remove('dialog-open');
+        enableScroll();
     }
+}
+
+function disableScroll() {
+  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  const scrollY = window.scrollY;
+
+  document.body.style.position = 'fixed';
+  document.body.style.top = `-${scrollY}px`;
+  document.body.style.left = '0';
+  document.body.style.right = '0';
+  document.body.style.paddingRight = `${scrollBarWidth}px`;
+  document.body.dataset.scrollY = scrollY;
+}
+
+function enableScroll() {
+  const scrollY = document.body.dataset.scrollY;
+  document.body.style.position = '';
+  document.body.style.top = '';
+  document.body.style.left = '';
+  document.body.style.right = '';
+  window.scrollTo(0, parseInt(scrollY || '0'));
 }
