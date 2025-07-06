@@ -1,7 +1,3 @@
-html {
-  overflow-y: scroll;
-}
-
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: flex;
@@ -14,6 +10,7 @@ body {
     color: #555;
     opacity: 0;
     transition: opacity 0.3s ease-in;
+    overscroll-behavior: none;
 }
 
 body.loaded {
@@ -255,20 +252,28 @@ input:checked + .slider:before {
 }
 
 .dialog {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    width: 100vw;
+    height: 100vh;
+    overflow-y: scroll;
+    background-color: rgba(0,0,0,0.4);
     justify-content: center;
     align-items: center;
+    overscroll-behavior: contain;
 }
 
-.dialog-content {
+/* .dialog側でしたいけどうまく動かない　謎*/
+.dialog .nonScroll {
+    height:calc(100% + 1px);
+    width: 1px;
+    background-color: transparent;
+}
+
+.dialog .content {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -283,7 +288,7 @@ input:checked + .slider:before {
     align-items: center; /* Center items horizontally */
 }
 
-.dialog-content h2 {
+.dialog .content h2 {
     margin-top: 0;
     color: #333;
     border-bottom: 1px solid #eaeaea;
@@ -293,7 +298,7 @@ input:checked + .slider:before {
     text-align: left;
 }
 
-.dialog-content pre {
+.dialog .content pre {
     background-color: #eee;
     padding: 15px;
     border-radius: 5px;
