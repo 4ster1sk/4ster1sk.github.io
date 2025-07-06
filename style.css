@@ -24,7 +24,7 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .main {
@@ -37,7 +37,8 @@ a:hover {
 }
 
 
-.profile-container, .friends-container {
+.profile-container,
+.friends-container {
     padding: 30px;
     background-color: #fff;
     border-radius: 10px;
@@ -48,6 +49,19 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 20px;
+}
+
+.friends-container {
+    .link {
+        flex-basis: calc(50% - 12px);
+        box-sizing: border-box;
+        min-height: 80px;
+    }
+
+    img {
+        max-width: 100%;
+        max-height: 60px;
+    }
 }
 
 .footer-container {
@@ -108,62 +122,38 @@ input:checked + .slider:before {
     transform: translateX(26px);
 }
 
-
 .profile-info {
     display: flex;
     align-items: center;
     gap: 20px;
     width: 100%;
+
+    .avatar {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        border: 3px solid #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
 }
 
 .profile-text {
     display: flex;
     flex-direction: column;
-}
 
-.profile-text .name {
-    margin: 0;
-    font-size: 1.8em;
-    color: #111;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.fill-button {
-    background-color: #713999;
-    color: white;
-    padding: 2px 4px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.4em;
-    margin-left: 0px;
-    transition: all 0.2s ease-in-out;
-    text-decoration: none;
-    color: white;
-    outline-color: #ffffff;
-}
-
-.fill-button:hover,
-.fill-button:focus {
-    outline: 2px solid;
-    background-color: #ffffff;
-    transition: all 0.2s ease-in-out;
-    color: #713999;
-}
-
-.description {
-    margin: 5px 0 0 0;
-    color: #666;
-}
-
-.avatar {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
-    border: 3px solid #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    .name {
+        margin: 0;
+        font-size: 1.8em;
+        color: #111;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .description {
+        margin: 5px 0 0 0;
+        color: #666;
+    }
 }
 
 .link-section h2 {
@@ -199,22 +189,19 @@ input:checked + .slider:before {
     flex-basis: calc(33.333% - 12px);
     box-sizing: border-box;
 }
-
-.friends-container .link {
-    flex-basis: calc(50% - 12px);
-    box-sizing: border-box;
-    min-height: 80px;
-}
-
-.friends-container img {
-    max-width: 100%;
-    max-height: 60px;
-}
-
 .link:hover {
     background-color: #713999;
     color: #fff;
     border-color: #713999;
+
+    .icon {
+        color: #fff;
+    }
+
+    .svg-icon,
+    .misskey-icon {
+        filter: brightness(0) invert(1);
+    }
 }
 
 .icon {
@@ -223,10 +210,6 @@ input:checked + .slider:before {
     margin-right: 8px;
     color: #713999;
     transition: color 0.2s ease-in-out;
-}
-
-.link:hover .icon {
-    color: #fff;
 }
 
 .link i {
@@ -239,10 +222,6 @@ input:checked + .slider:before {
     vertical-align: middle;
     filter: invert(30%) sepia(90%) saturate(2000%) hue-rotate(260deg) brightness(70%) contrast(100%);
     transition: filter 0.2s ease-in-out;
-}
-
-.link:hover .svg-icon {
-    filter: brightness(0) invert(1);
 }
 
 .misskey-icon {
@@ -260,59 +239,68 @@ input:checked + .slider:before {
     width: 100vw;
     height: 100vh;
     overflow-y: scroll;
-    background-color: rgba(0,0,0,0.4);
+    background-color: rgba(0, 0, 0, 0.4);
     justify-content: center;
     align-items: center;
     overscroll-behavior: contain;
-}
 
-/* .dialog側でしたいけどうまく動かない　謎*/
-.dialog .nonScroll {
-    height:calc(100% + 1px);
-    width: 1px;
-    background-color: transparent;
-}
 
-.dialog .content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    position: relative;
-    display: flex; /* Added for button positioning */
-    flex-direction: column; /* Added for button positioning */
-    align-items: center; /* Center items horizontally */
-}
+    /* .dialog側でしたいけどうまく動かない　謎*/
+    .nonScroll {
+        height: calc(100% + 1px);
+        width: 1px;
+        background-color: transparent;
+    }
 
-.dialog .content h2 {
-    margin-top: 0;
-    color: #333;
-    border-bottom: 1px solid #eaeaea;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    width: 100%; /* Ensure heading takes full width */
-    text-align: left;
-}
+    .content {
+        background-color: #fefefe;
+        margin: auto;
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%;
+        max-width: 600px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        position: relative;
+        display: flex;
+        /* Added for button positioning */
+        flex-direction: column;
+        /* Added for button positioning */
+        align-items: center;
+        /* Center items horizontally */
+    }
 
-.dialog .content pre {
-    background-color: #eee;
-    padding: 15px;
-    border-radius: 5px;
-    overflow-x: auto;
-    white-space: pre-wrap; /* Ensures long lines wrap */
-    word-wrap: break-word; /* Breaks words if necessary */
-    max-height: 400px; /* Limit height for scroll */
-    font-size: 0.9em;
-    line-height: 1.4;
-    border: 1px solid #ddd;
-    width: 100%; /* Ensure pre takes full width */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
+    .content h2 {
+        margin-top: 0;
+        color: #333;
+        border-bottom: 1px solid #eaeaea;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        width: 100%;
+        /* Ensure heading takes full width */
+        text-align: left;
+    }
 
+    .content pre {
+        background-color: #eee;
+        padding: 15px;
+        border-radius: 5px;
+        overflow-x: auto;
+        white-space: pre-wrap;
+        /* Ensures long lines wrap */
+        word-wrap: break-word;
+        /* Breaks words if necessary */
+        max-height: 400px;
+        /* Limit height for scroll */
+        font-size: 0.9em;
+        line-height: 1.4;
+        border: 1px solid #ddd;
+        width: 100%;
+        /* Ensure pre takes full width */
+        box-sizing: border-box;
+        /* Include padding and border in the element's total width and height */
+    }
+}
 
 .close-button {
     color: #aaa;
@@ -331,20 +319,27 @@ input:checked + .slider:before {
     cursor: pointer;
 }
 
-.copy-button {
+.fill-button {
     background-color: #713999;
     color: white;
-    padding: 10px 20px;
+    padding: 2px 4px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 1em;
-    margin-top: 15px;
-    transition: background-color 0.2s ease-in-out;
+    font-size: 0.4em;
+    margin-left: 0px;
+    transition: all 0.2s ease-in-out;
+    text-decoration: none;
+    color: white;
+    outline-color: #ffffff;
 }
 
-.copy-button:hover {
-    background-color: #5a2c7a;
+.fill-button:hover,
+.fill-button:focus {
+    outline: 2px solid;
+    background-color: #ffffff;
+    transition: all 0.2s ease-in-out;
+    color: #713999;
 }
 
 /* Responsive Design */
