@@ -13,13 +13,13 @@ MODIFIED=false
 cp "$INDEX_FILE" "$TMP_FILE"
 
 if echo "$CHANGED_FILES" | grep -q 'style\.css'; then
-  echo "style.cssが更新されたためindex.htmlの時刻を書き換えます"
+  echo "style.scssが更新されたためindex.htmlの時刻を書き換えます"
   sed -i -E "s|(style\.css\?v=)[0-9]+|\1${TIMESTAMP}|" "$TMP_FILE"
   MODIFIED=true
 fi
 
 if echo "$CHANGED_FILES" | grep -q 'dark-theme\.css'; then
-  echo "dark-theme.cssが更新されたためindex.htmlの時刻を書き換えます"
+  echo "dark-theme.scssが更新されたためindex.htmlの時刻を書き換えます"
   sed -i -E "s|(dark-theme.css\?v=)[0-9]+|\1${TIMESTAMP}|" "$TMP_FILE"
   MODIFIED=true
 fi

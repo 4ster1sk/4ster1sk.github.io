@@ -188,19 +188,20 @@ input:checked + .slider:before {
     transition: all 0.2s ease-in-out;
     flex-basis: calc(33.333% - 12px);
     box-sizing: border-box;
-}
-.link:hover {
-    background-color: #713999;
-    color: #fff;
-    border-color: #713999;
 
-    .icon {
+    &:hover {
+        background-color: #713999;
         color: #fff;
-    }
+        border-color: #713999;
 
-    .svg-icon,
-    .misskey-icon {
-        filter: brightness(0) invert(1);
+        .icon {
+            color: #fff;
+        }
+
+        .svg-icon,
+        .misskey-icon {
+            filter: brightness(0) invert(1);
+        }
     }
 }
 
