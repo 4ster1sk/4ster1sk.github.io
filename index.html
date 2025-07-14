@@ -8,11 +8,11 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     />
-    <link rel="stylesheet" href="./css/style.css?v=1752363629" />
-    <link rel="stylesheet" href="./css/dark-theme.css?v=1752363629" />
+    <link rel="stylesheet" href="./css/style.css?v=1752499109" />
+    <link rel="stylesheet" href="./css/dark-theme.css?v=1752499109" />
   </head>
   <body>
-    <script src="./js/script.js?v=1752363629"></script>
+    <script src="./js/script.js?v=1752499109"></script>
     <div class="main">
       <div class="profile-container">
         <div class="profile-info">
@@ -92,8 +92,11 @@
         <span>
           MisskeyロゴはMisskey Hubにて配布されている<a
             href="https://misskey-hub.net/ja/brand-assets/"
-            >アセット集</a
+            >アセット集 <i class="fa-solid fa-arrow-up-right-from-square"></i></a
           >に含まれるものであり CC BY-SA 4.0のライセンスに従って利用しています
+        </span>
+        <span>
+          <a href="#" onClick="openDialog(event, 'privacy-dialog')">プライバシーポリシー</a>
         </span>
         <div class="theme-switcher-container">
           <label class="theme-switcher">
@@ -139,7 +142,49 @@ lu9Pt5sIfUFP0wEAvHuwOtRpmElXUKGD4KwE3uWaaJC1+x99csY0Qvq/KQ0=
         <span>(400x80)</span>
         <span>リンクはご自由にどうぞ</span>
         <span>&nbsp;</span>
-        <a href="image/banner200x40.png">200x40が必要な場合はこちら</a>
+        <a href="image/banner200x40.png" class="link"
+          ><i class="fas fa-download svg-icon"></i> 200x40が必要な場合はこちら</a
+        >
+      </div>
+    </div>
+    <div id="privacy-dialog" class="dialog">
+      <div class="nonScroll"></div>
+      <div class="content" style="align-items: normal">
+        <a href="#" onClick="closeDialog(event, this);">
+          <span class="close-button">&times;</span>
+        </a>
+        <h2>プライバシーポリシー</h2>
+        <h3>1. アクセス解析ツールについて</h3>
+        <span
+          >当サイトでは、Cloudflare社が提供する「Cloudflare Web
+          Analytics」を利用しております。このツールは、クッキーを使用せず、かつ個人を特定しない形で訪問者のアクセス状況（ページ閲覧数、滞在時間、使用ブラウザなど）を収集します。</span
+        >
+        <span
+          >Cloudflare Web Analytics
+          によって収集された情報は、当サイトのサービス向上および統計分析のために利用され、他の目的で使用されることはありません。</span
+        >
+        <span
+          >詳しくは、<a
+            href="https://www.cloudflare.com/privacypolicy/"
+            target="_blank"
+            rel="noopener"
+            >Cloudflare社のプライバシーポリシー
+            <i class="fa-solid fa-arrow-up-right-from-square"></i></a
+          >をご確認ください。</span
+        >
+        <span>&nbsp;</span>
+
+        <h3>2. 免責事項</h3>
+        <span
+          >当サイトからリンクやバナーなどによって他のサイトに移動された場合、移動先サイトで提供される情報、サービス等については一切の責任を負いません。</span
+        >
+        <span>&nbsp;</span>
+
+        <h3>3. プライバシーポリシーの変更</h3>
+        <span
+          >当サイトは、必要に応じて本ポリシーの内容を予告なく変更することがあります。変更後の内容は、当ページにて常に最新のものを掲載いたします。</span
+        >
+        <span>&nbsp;</span>
       </div>
     </div>
   </body>
